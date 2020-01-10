@@ -1,0 +1,25 @@
+libhsakmt_sources =			\
+	debug.c				\
+	events.c			\
+	fmm.c				\
+	globals.c			\
+	libhsakmt.c			\
+	libhsakmt.ver			\
+	memory.c			\
+	openclose.c			\
+	perfctr.c			\
+	pmc_table.c			\
+	queues.c			\
+	time.c				\
+	topology.c			\
+	version.c			\
+	$(NULL)
+
+libhsakmt_headers =			\
+	fmm.h				\
+	libhsakmt.h			\
+	pmc_table.h			\
+	include/hsakmt.h		\
+	include/hsakmttypes.h		\
+	include/linux/kfd_ioctl.h	\
+	$(NULL)

@@ -1,0 +1,5 @@
+Name: hsakmt
+Description: The HSAKMT library (version 1)
+Version: @PACKAGE_VERSION@
+Cflags: -I${pc_top_builddir}/${pcfiledir}/hsakmt
+Libs: ${pc_top_builddir}/${pcfiledir}/hsakmt/libhsakmt-1.la

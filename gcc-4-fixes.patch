@@ -1,0 +1,33 @@
+From fd24c1467604f213a66dc05f58e04a959665c82f Mon Sep 17 00:00:00 2001
+From: "Bridgman, John" <John.Bridgman@amd.com>
+Date: Tue, 29 Mar 2016 23:12:23 +0000
+Subject: hsakmt: allow building with gcc 4.x v2
+
+The hsakmt code requires C99 compiler support, however gcc 4.x
+defaults to C89 (gcc 5 defaults to C11). v2 patch copies code
+from libdrm, using AC_PROG_CC_C99 and checking success.
+
+v1 used AC_PROG_CC_STDC and did not check C99 was enabled.
+
+Signed-off-by: John Bridgman <john.bridgman@amd.com>
+
+diff --git a/configure.ac b/configure.ac
+index b8e9bea..0111067 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -66,6 +66,12 @@ AC_CANONICAL_HOST
+ AC_PROG_AWK
+ test_CFLAGS=${CFLAGS+set} # We may override autoconf default CFLAGS.
+ AC_PROG_CC
++AC_PROG_CC_C99
++
++if test "x$ac_cv_prog_cc_c99" = xno; then
++	AC_MSG_ERROR([Building hsakmt requires C99 enabled compiler])
++fi
++
+ AC_PROG_INSTALL
+ AC_PROG_LIBTOOL
+ AC_PROG_MAKE_SET
+-- 
+cgit v0.10.2
+

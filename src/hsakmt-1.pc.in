@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: hsakmt
+Description: The HSAKMT library (version 1)
+Version: @PACKAGE_VERSION@
+Cflags: -I${includedir}/hsakmt-1
+Libs: -L${libdir} -lhsakmt-1
+
